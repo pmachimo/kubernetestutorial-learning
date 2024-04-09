@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kubernetes-dashboard-ingress-third1
+  namespace: kubernetes-dashboard
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /test3
+            pathType: Prefix
+            backend:
+              service:
+                name: kubernetes-dashboard
+                port:
+                  number: 80
